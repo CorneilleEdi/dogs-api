@@ -2,7 +2,7 @@
 
 A set of API to test deployment.
 
-[x] PostgreSQL
-[ ] MongoDB
-[ ] Redis
-[ ] Simple
+- [x] PostgreSQL
+- [ ] MongoDB
+- [ ] Redis
+- [ ] Simple
