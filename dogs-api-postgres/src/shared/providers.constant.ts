@@ -1,0 +1,2 @@
+export const DATA_SOURCE = 'DATA_SOURCE';
+export const DOGS_REPOSITORY = 'DOGS_REPOSITORY';

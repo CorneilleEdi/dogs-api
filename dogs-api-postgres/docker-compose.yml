@@ -1,0 +1,32 @@
+version: '3'
+
+services:
+  postgres:
+    container_name: postgres_dogs_api
+    image: postgres:14.3-alpine
+    restart: always
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: nest-dogs
+    logging:
+      options:
+        max-size: 10m
+        max-file: "3"
+    ports:
+      - "5432:5432"
+
+  api:
+    container_name: dogs-api
+    build: .
+    depends_on:
+      - postgres
+    ports:
+      - 3000:3000
+    environment:
+      NODE_ENV: production
+      POSTGRES_HOST: postgres
+      POSTGRES_PORT: 5432
+      POSTGRES_USERNAME: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DATABASE: nest-dogs
